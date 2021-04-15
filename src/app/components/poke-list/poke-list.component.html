@@ -19,8 +19,12 @@
     </tr>
   </thead>
   <tbody>
+    <!-- display all available type for Pipe filtering, sep with | -->
+    <span *ngFor="let type of types" (click)="selectedType = type"> {{type}} | </span>
+    <!-- <h1>DBG {{selectedType}}</h1> -->
+
     <!-- display all, clicking on 1 opens read-only edit form -->
-    <div  *ngFor="let poke of pokemons" (click)='pickAPoke(poke)'>
+    <div  *ngFor="let poke of pokemons | pokeType:selectedType" (click)='pickAPoke(poke)'>
       <!-- <tr *ngFor="let poke of pokemons" (click)='pickAPoke(poke)' > -->
       <tr >
         <td>{{poke.pokeId}}</td>

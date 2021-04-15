@@ -13,6 +13,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AccordionComponent } from './components/accordion/accordion.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PokeListComponent } from './components/poke-list/poke-list.component';
+import { PokeTypePipe } from './pipes/poke-type.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PokeListComponent } from './components/poke-list/poke-list.component';
     ProductListComponent,
     HrComponent,
     AccordionComponent,
-    PokeListComponent
+    PokeListComponent,
+    PokeTypePipe
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,25 @@ export class PokeListComponent implements OnInit {
   selected = null;
   newPokemon: Pokemon = new Pokemon();
 
+  // pipes chapter added:
+  types = [
+    'all',
+    'normal',
+    'poison',
+    'water',
+    'fighting',
+    'fire',
+    'bug',
+    'flying',
+    'electric',
+    'ground',
+    'rock',
+    'psychic',
+    'ghost',
+    'dragon'
+  ];
+  selectedType: string = this.types[0];
+
   constructor(private pokeService: PokemonService) { }
 
   ngOnInit(): void {
