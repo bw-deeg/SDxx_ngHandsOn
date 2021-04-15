@@ -1,4 +1,4 @@
-<!-- add form -->
+<!-- add form deeg all-->
 <div *ngIf='!selected'>
   <h1>hello</h1>
   <input [(ngModel)]="newPokemon.pokeId" type="number" name="pokeId" placeholder="Poke ID"><br>
@@ -19,7 +19,7 @@
     </tr>
   </thead>
   <tbody>
-    <!-- display all available type for Pipe filtering, sep with | -->
+    <!-- display all available types, for Pipe filtering, sep with | -->
     <span *ngFor="let type of types" (click)="selectedType = type"> {{type}} | </span>
     <!-- <h1>DBG {{selectedType}}</h1> -->
 
