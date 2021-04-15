@@ -24,7 +24,7 @@
       <!-- <tr *ngFor="let poke of pokemons" (click)='pickAPoke(poke)' > -->
       <tr >
         <td>{{poke.pokeId}}</td>
-        <td>{{poke.name}}</td>
+        <td>{{poke.name | uppercase }}</td>
         <td>
           <img [src]="poke.img"/>
         </td>
@@ -36,10 +36,10 @@
 <!-- edit form -->
 <div *ngIf='selected'>
   <p > {{selected.pokeId}} <p>
-  <p > {{selected.name}} <p>
+  <p > {{selected.name | uppercase}} <p>
   <p>{{selected.img}}</p>
   <p > {{selected.description}} <p>
-  <p > {{selected.height}} {{selected.weight}} </p>
+  <p > {{selected.height | number:'1.1'}} {{selected.weight | number:'1.1'}} </p>
   <div *ngFor='let typ of selected.types'>
     <p>{{typ.id}} {{typ.name}}</p>
   </div>
