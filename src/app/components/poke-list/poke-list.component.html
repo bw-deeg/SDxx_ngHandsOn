@@ -1,0 +1,49 @@
+<!-- add form -->
+<div *ngIf='!selected'>
+  <h1>hello</h1>
+  <input [(ngModel)]="newPokemon.pokeId" type="number" name="pokeId" placeholder="Poke ID"><br>
+  <input [(ngModel)]="newPokemon.name" type="text" name="name" placeholder="Poke name"><br>
+  <textarea [(ngModel)]="newPokemon.description" cols="30" rows="5" type="text"  name="description" placeholder="Description"></textarea><br>
+  <input [(ngModel)]="newPokemon.height"  type="number" name="height" placeholder="Height"><br>
+  <input [(ngModel)]="newPokemon.weight"  type="number" name="weight" placeholder="Weight"><br>
+  <input [(ngModel)]="newPokemon.img" type="text" name="img" placeholder="Image URL"><br>
+  <button (click)='create()'>Add</button> <!-- parm not needed; backing store newPokemon used -->
+</div>
+
+<table *ngIf='!selected'>
+  <thead>
+    <tr>
+      <td>id</td>
+      <td>name</td>
+      <td>image</td>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- display all, clicking on 1 opens read-only edit form -->
+    <div  *ngFor="let poke of pokemons" (click)='pickAPoke(poke)'>
+      <!-- <tr *ngFor="let poke of pokemons" (click)='pickAPoke(poke)' > -->
+      <tr >
+        <td>{{poke.pokeId}}</td>
+        <td>{{poke.name}}</td>
+        <td>
+          <img [src]="poke.img"/>
+        </td>
+      </tr>
+  </div>
+  </tbody>
+</table>
+
+<!-- edit form -->
+<div *ngIf='selected'>
+  <p > {{selected.pokeId}} <p>
+  <p > {{selected.name}} <p>
+  <p>{{selected.img}}</p>
+  <p > {{selected.description}} <p>
+  <p > {{selected.height}} {{selected.weight}} </p>
+  <div *ngFor='let typ of selected.types'>
+    <p>{{typ.id}} {{typ.name}}</p>
+  </div>
+  <!-- <button (click)='selected = null'>Back</button> -->
+  <button (click)='displayAll()'>Back</button>
+</div>
+

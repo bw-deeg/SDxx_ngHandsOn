@@ -1,0 +1,24 @@
+<h1>Employee Intake Form</h1>
+
+<label for="firstName">firstName</label>
+<input type="text" name="firstName" [(ngModel)]="employee.firstName"><br>
+
+<label for="lastName">lastName</label>
+<input type="text" name="lastName" [(ngModel)]="employee.lastName"><br>
+
+<label for="age">age</label>
+<input type="text" name="age"  [(ngModel)]="employee.age"><br>
+
+<input type="date" name="dateHired" [(ngModel)]="employee.hireDate">
+<label>
+  <input type="checkbox" name="isFullTime"  [(ngModel)]="employee.isFullTime"> Full Time
+</label><br>
+
+<label for="location">location</label>
+<select name="location" [(ngModel)]='employee.location'>
+  <option *ngFor="let loc of locations">{{loc}}</option>
+</select><br>
+
+<input (click)='onSubmit()' type="submit">
+
+<h5>{{employee | json}}</h5>

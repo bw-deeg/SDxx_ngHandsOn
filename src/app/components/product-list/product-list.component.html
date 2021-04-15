@@ -1,0 +1,29 @@
+<h1>{{title}}</h1>
+<input type="text" name="title" [(ngModel)]="title">
+
+<!-- create product, assigning backing store; <form> not needed here -->
+<form>
+  <input type="text" name="name" placeholder="Name" [(ngModel)]='newProduct.name' /><br />
+  <input type="text" name="price" placeholder="Price" [(ngModel)]='newProduct.price'/><br />
+  <input type="text" name="imageUrl" placeholder="Image URL" [(ngModel)]='newProduct.imgUrl'/><br />
+  <input type="number" name="rating" placeholder="rating" [(ngModel)]='newProduct.rating'/><br />
+  <input type="submit" class="btn btn-primary" value="Add Item" (click)='onSubmit()'/>
+</form><br>
+
+<button (click)="log('This is an event binding'); display=!display">Hello?</button>
+
+<h3>Number of Products : {{getNumberOfProducts()}}</h3>
+
+<div *ngIf='display'>
+  <h2>Hello</h2>
+</div>
+
+<div *ngFor="let product of products">
+
+  <h3 > {{product.name}} </h3>
+  <p>{{product.price}}</p>
+  <p>{{product.rating}}</p>
+  <img [src]='product.imgUrl'> <!--<img src={{product.imgUrl}}> -->
+  <hr>
+</div>
+
