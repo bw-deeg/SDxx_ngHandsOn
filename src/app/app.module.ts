@@ -14,6 +14,9 @@ import { AccordionComponent } from './components/accordion/accordion.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PokeListComponent } from './components/poke-list/poke-list.component';
 import { PokeTypePipe } from './pipes/poke-type.pipe';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { PokeTypePipe } from './pipes/poke-type.pipe';
     HrComponent,
     AccordionComponent,
     PokeListComponent,
-    PokeTypePipe
+    PokeTypePipe,
+    HomeComponent,
+    AboutComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
