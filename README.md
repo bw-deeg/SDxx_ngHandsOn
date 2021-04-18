@@ -1,6 +1,7 @@
 # NgHandsOn
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.8.
+SD28 - ngHandsOn hits a hard-coded product-list from the service, and the pokemon list comes from the provided URL
+
 
 ## Development server
 
